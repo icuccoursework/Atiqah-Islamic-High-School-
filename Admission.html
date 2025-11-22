@@ -314,43 +314,44 @@
             <p><strong>Email:</strong> admissions@atiqahislamichighschool.ac.ug</p>
             <p><strong>Office Hours:</strong> Mon - Fri, 8:00 AM - 5:00 PM</p>
         </div>
-
-        <!-- Admission Form -->
+  <!-- FORM -->
         <div class="admission-form">
             <h4>Apply Now</h4>
-            <form id="admissionForm" onsubmit="submitForm(event)">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
 
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob" required>
+            <form id="admissionForm" onsubmit="sendWhatsApp(event)">
+                
+                <label>Full Name</label>
+                <input type="text" id="fullname" required>
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <label>Date of Birth</label>
+                <input type="date" id="dob" required>
 
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                <label>Email</label>
+                <input type="email" id="email" required>
 
-                <label for="previousschool">Previous School</label>
-                <input type="text" id="previousschool" name="previousschool" placeholder="Previous school attended" required>
+                <label>Phone Number</label>
+                <input type="tel" id="phone" required>
 
-                <label for="grade">Grade Applying For</label>
-                <select id="grade" name="grade" required>
+                <label>Previous School</label>
+                <input type="text" id="previousschool" required>
+
+                <label>Grade Applying For</label>
+                <select id="grade" required>
                     <option value="">Select Grade</option>
-                                        <option value="S.1">Senior 1</option>
-                    <option value="S.2">Senior 2</option>
-                    <option value="S.3">Senior 3</option>
-                    <option value="S.4">Senior 4</option
+                    <option>S.1</option>
+                    <option>S.2</option>
+                    <option>S.3</option>
+                    <option>S.4</option>
                 </select>
 
-                <label for="message">Additional Notes</label>
-                <textarea id="message" name="message" rows="4" placeholder="Any additional information..."></textarea>
+                <label>Additional Notes</label>
+                <textarea id="message" rows="3"></textarea>
 
                 <button type="submit">Submit Application</button>
             </form>
 
             <div id="successMessage" class="success-message">
-                ✅ Your application has been submitted successfully!
+                Your application has been submitted successfully!
             </div>
         </div>
     </div>
@@ -358,23 +359,53 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="container">
-        <p>&copy; 2025 Atiqah Islamic High School | All Rights Reserved</p>
-    </div>
+    <p>&copy; 2025 Atiqah Islamic High School. All rights reserved.</p>
 </footer>
 
 <script>
-function submitForm(event) {
+// HAMBURGER FUNCTION
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+
+// SEND TO WHATSAPP
+function sendWhatsApp(event){
     event.preventDefault();
-    document.getElementById('admissionForm').reset();
-    const msg = document.getElementById('successMessage');
-    msg.style.display = 'block';
-    setTimeout(() => {
-        msg.style.display = 'none';
-    }, 4000);
+
+    let fullname = document.getElementById("fullname").value;
+    let dob = document.getElementById("dob").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let previousschool = document.getElementById("previousschool").value;
+    let grade = document.getElementById("grade").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappNumber = "+256748446542";
+
+    let text =
+`📚 *ADMISSION APPLICATION*
+=========================
+👤 *Name:* ${fullname}
+🎂 *Date of Birth:* ${dob}
+📧 *Email:* ${email}
+📞 *Phone:* ${phone}
+🏫 *Previous School:* ${previousschool}
+🎓 *Grade Applying For:* ${grade}
+📝 *Notes:* ${message}`;
+
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+    document.getElementById("admissionForm").reset();
+    document.getElementById("successMessage").style.display = "block";
+
+    setTimeout(()=>{
+        document.getElementById("successMessage").style.display = "none";
+    },3000);
 }
 </script>
+
 </body>
-</html>
-
-
+                                   </html>
+                                        
