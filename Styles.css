@@ -1,0 +1,377 @@
+﻿/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: #003366; /* deep blue */
+  color: white;
+  padding: 15px 0;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .logo img {
+  height: 50px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover, .nav a.active {
+  color: #ffa500; /* orange */
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)),
+              url('../images/school-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #ff8c00;
+}
+
+/* ===== ABOUT PREVIEW ===== */
+.about-preview {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: 2px solid #003366;
+  color: #003366;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-outline:hover {
+  background-color: #003366;
+  color: white;
+}
+
+/* ===== NEWS SECTION ===== */
+.news {
+  background-color: #f5f8ff;
+  padding: 60px 0;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid #ffa500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+}
+/* --------------------------
+   GLOBAL STYLES
+--------------------------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* --------------------------
+   HEADER & NAVBAR
+--------------------------- */
+header {
+  background: #004aad; /* Deep blue */
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -30px;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff7b00; /* Orange accent */
+  text-decoration: underline;
+}
+
+/* --------------------------
+   HERO SECTION
+--------------------------- */
+.hero {
+  background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('images/school-banner.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --------------------------
+   CONTENT SECTIONS
+--------------------------- */
+.content-section {
+  padding: 60px 0;
+}
+
+.content-section h3 {
+  color: #004aad;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.content-section p {
+  color: #333;
+  font-size: 17px;
+}
+
+/* --------------------------
+   CONTACT PAGE STYLES
+--------------------------- */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  background: #f5f7fa;
+  border-left: 5px solid #ff7b00;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: #f0f4ff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 15px;
+  color: #004aad;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #004aad;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 74, 173, 0.3);
+}
+
+.contact-form button {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #ff7b00;
+}
+
+/* --------------------------
+   SUCCESS MESSAGE
+--------------------------- */
+.success-message {
+  background: #e0ffe5;
+  color: #006d1b;
+  border: 1px solid #00a23a;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------
+   PROGRESS BAR (Admissions)
+--------------------------- */
+.progress-bar {
+  width: 100%;
+  background: #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 25px 0;
+  height: 18px;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background: #ff7b00;
+  animation: progressAnimation 3s forwards;
+}
+
+@keyframes progressAnimation {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* --------------------------
+   FOOTER
+--------------------------- */
+footer {
+  background: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 60px;
+  font-size: 15px;
+}
+
+/* --------------------------
+   RESPONSIVE DESIGN
+--------------------------- */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .hero-text h2 {
+    font-size: 28px;
+  }
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}

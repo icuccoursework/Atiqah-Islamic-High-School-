@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wings | Gift High School</title>
+
+    <style>
+        /* ===== GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #004aad;
+            color: #fff;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== LOGO ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .logo h1 {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff7b00;
+            text-decoration: underline;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('images/camp1.jpg') center/cover no-repeat;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== CAMPUSES SECTION ===== */
+        .campuses-section {
+            padding: 60px 0;
+        }
+
+        .campuses-section h3 {
+            text-align: center;
+            font-size: 2em;
+            color: #004aad;
+            margin-bottom: 50px;
+        }
+
+        .campus-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .campus-card {
+            background: #f0f4ff;
+            border-left: 5px solid #ff7b00;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .campus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .campus-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .campus-card h4 {
+            color: #004aad;
+            margin-bottom: 10px;
+        }
+
+        .campus-card p {
+            font-size: 15px;
+            color: #333;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #004aad;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 60px;
+            font-size: 15px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background: #004aad;
+                gap: 15px;
+                padding: 15px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .logo {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Gift High School Logo">
+                <h1>Gift High School</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Academics.html">Academics</a></li>
+                    <li><a href="Admission.html">Admissions</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Our Mavourous wings</h2>
+            <p>Explore our various campuses where excellence in education meets discipline and creativity.</p>
+        </div>
+    </section>
+
+    <!-- CAMPUSES -->
+    <section class="campuses-section">
+        <div class="container">
+            <h3>Gift High School Campuses</h3>
+            <div class="campus-cards">
+                <div class="campus-card">
+                    <img src="images/camp2.jpg" alt="Main Campus">
+                    <h4>Central wing</h4>
+                    <p>Located in <strong>Kampala City Center</strong>, our main campus offers state-of-the-art classrooms, labs, and sports facilities for all students.</p>
+                </div>
+                <div class="campus-card">
+                    <img src="images/camp3.jpg" alt="East Campus">
+                    <h4>East Wing</h4>
+                    <p>East Campus specializes in science and technology programs with modern labs and an innovative learning environment.</p>
+                </div>
+                <div class="campus-card">
+                    <img src="images/camp4.jpg" alt="West Campus">
+                    <h4>West Wing</h4>
+                    <p>West Campus focuses on arts, sports, and cultural development, nurturing creativity and teamwork among students.</p>
+                </div>
+                <div class="campus-card">
+                    <img src="images/activities.jpg" alt="North Campus">
+                    <h4>North Wing</h4>
+                    <p>North Campus provides specialized boarding facilities with holistic programs for academic excellence and personal growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Gift High School | All Rights Reserved</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics | Gift High School</title>
+<style>
+    /* ===== GLOBAL ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Poppins", sans-serif; line-height: 1.6; background-color: #fff; color: #333; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    /* ===== HEADER ===== */
+    .header { background-color: #003366; color: white; padding: 15px 0; }
+    .header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 60px; width: 60px; border-radius: 50%; object-fit: cover; }
+    .logo h1 { font-size: 1.8em; font-weight: 600; color: white; }
+    .nav ul { list-style: none; display: flex; justify-content: flex-end; gap: 20px; }
+    .nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav a:hover, .nav a.active { color: #ffa500; }
+
+    /* Hamburger menu */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .hamburger div { width: 25px; height: 3px; background: #fff; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero { background: linear-gradient(rgba(0,74,173,0.7), rgba(0,74,173,0.7)), url('images/ACT.JPG') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px; }
+    .page-hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+    .page-hero p { font-size: 1.1em; }
+
+    /* ===== ACADEMICS SECTION ===== */
+    .academics { padding: 60px 0; }
+    .academics h2 { text-align: center; margin-bottom: 40px; color: #003366; }
+    .departments { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .dept-card { background-color: #f5f8ff; border-left: 5px solid #ffa500; border-radius: 5px; padding: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .dept-card:hover { transform: translateY(-5px); }
+    .dept-card h3 { color: #003366; margin-bottom: 10px; }
+    .dept-card p { font-size: 0.95em; }
+
+    /* ===== SUBJECTS & CO-CURRICULAR ===== */
+    .subjects-section { padding: 60px 0; }
+    .subjects-section h2 { text-align: center; margin-bottom: 40px; color: #003366; }
+    .subjects-list, .activities-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .subject, .activity { background: #f0f4ff; border-left: 5px solid #003366; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+    /* ===== CORE VALUES ===== */
+    .core-values { text-align: center; padding: 60px 20px; background-color: #003366; color: white; }
+    .core-values h2 { margin-bottom: 20px; }
+    .values-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+    .value-box { background-color: white; color: #003366; border-radius: 8px; padding: 20px; width: 250px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-weight: 500; }
+
+    /* ===== FOOTER ===== */
+    .footer { background-color: #003366; color: white; text-align: center; padding: 15px 0; margin-top: 50px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        .nav ul { flex-direction: column; align-items: center; gap: 10px; display: none; background: #003366; width: 100%; position: absolute; top: 60px; left: 0; padding: 15px 0; }
+        .nav ul.show { display: flex; }
+        .hamburger { display: flex; }
+        .page-hero h2 { font-size: 2em; }
+    }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Gift High School Logo">
+            <h1>Gift High School</h1>
+        </div>
+        <nav class="nav">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Us.html">About</a></li>
+                <li><a href="Academics.html" class="active">Academics</a></li>
+                <li><a href="Admission.html">Admissions</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="hero-text">
+        <h2>Academics at Gift High School</h2>
+        <p>Fostering intellectual growth and excellence in every learner, including Islamic Theology studies.</p>
+    </div>
+</section>
+
+<!-- ACADEMIC DEPARTMENTS -->
+<section class="academics">
+    <div class="container">
+        <h2>Our Academic Departments</h2>
+        <div class="departments">
+            <div class="dept-card">
+                <h3>Science Department</h3>
+                <p>Physics, Chemistry, Biology; hands-on labs preparing students for national exams and practical skills.</p>
+            </div>
+            <div class="dept-card">
+                <h3>Arts Department</h3>
+                <p>History, Literature, Geography, Fine Art; fostering creativity and critical thinking.</p>
+            </div>
+            <div class="dept-card">
+                <h3>Business & ICT</h3>
+                <p>Accounting, Commerce, Entrepreneurship, ICT; developing digital literacy and entrepreneurial skills.</p>
+            </div>
+            <div class="dept-card">
+                <h3>Islamic Studies</h3>
+                <p>Qur'an, Hadith, Fiqh, Akhlaq, and Arabic language; nurturing spiritual and moral growth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="subjects-section">
+    <div class="container">
+        <h2>Subjects We Offer</h2>
+        <div class="subjects-list">
+            <div class="subject">English Language</div>
+            <div class="subject">Mathematics</div>
+            <div class="subject">Physics</div>
+            <div class="subject">Chemistry</div>
+            <div class="subject">Biology</div>
+            <div class="subject">Geography</div>
+            <div class="subject">History</div>
+            <div class="subject">Commerce</div>
+            <div class="subject">Accounting</div>
+            <div class="subject">Entrepreneurship</div>
+            <div class="subject">Computer Studies / ICT</div>
+            <div class="subject">Fine Art / Music</div>
+            <div class="subject">Islamic Theology / Arabic</div>
+        </div>
+    </div>
+</section>
+
+<!-- CO-CURRICULAR ACTIVITIES -->
+<section class="subjects-section">
+    <div class="container">
+        <h2>Co-Curricular Activities</h2>
+        <div class="activities-list">
+            <div class="activity">Sports: Football, Basketball, Athletics</div>
+            <div class="activity">Music & Arts Club</div>
+            <div class="activity">Science & Robotics Club</div>
+            <div class="activity">Debating & Public Speaking</div>
+            <div class="activity">Community Service & Volunteering</div>
+            <div class="activity">Environmental Club</div>
+            <div class="activity">ICT & Coding Club</div>
+            <div class="activity">Islamic Studies & Qur’an Club</div>
+        </div>
+    </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="core-values">
+    <h2>Our Core Academic Values</h2>
+    <div class="values-list">
+        <div class="value-box">Excellence</div>
+        <div class="value-box">Integrity</div>
+        <div class="value-box">Discipline</div>
+        <div class="value-box">Innovation</div>
+        <div class="value-box">Teamwork</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Gift High School | All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navMenu').classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>

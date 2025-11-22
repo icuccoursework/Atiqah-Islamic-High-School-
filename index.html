@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift High School | Home</title>
+
+  <style>
+    /* ===== GLOBAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 0;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header .logo img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%; /* Make the logo fully rounded */
+      object-fit: cover;  /* Ensure image covers the circle */
+      border: 2px solid white; /* Optional: white border around logo */
+    }
+
+    .header .logo h1 {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav {
+      position: relative;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: #ffa500;
+    }
+
+    /* ===== HAMBURGER MENU ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)),
+        url("images/school.jpg") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #ffa500;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff8c00;
+    }
+
+    /* ===== ABOUT PREVIEW ===== */
+    .about-preview {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: 2px solid #003366;
+      color: #003366;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background-color: #003366;
+      color: white;
+    }
+
+    /* ===== NEWS SECTION ===== */
+    .news {
+      background-color: #f5f8ff;
+      padding: 60px 0;
+    }
+
+    .news h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #003366;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: white;
+      padding: 20px;
+      border-left: 5px solid #ffa500;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-card h3 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav ul {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #003366;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        display: none;
+      }
+
+      .nav ul.show {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .header .container {
+        flex-wrap: nowrap;
+      }
+
+      .logo h1 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Gift High School Logo" />
+        <h1>Gift High School</h1>
+      </div>
+
+      <nav class="nav">
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul id="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Academics.html">Academics</a></li>
+          <li><a href="Admission.html">Admissions</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Branches.html">Our Campuses</a></li>
+          <li><a href="Developers.html" class="active">Developer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Welcome to Gift High School</h2>
+      <p>INTERNATIONALIZE OUR MODERN CULTURE.</p>
+      <a href="Admission.html" class="btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT PREVIEW ====== -->
+  <section class="about-preview">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Gift High School is a center of academic excellence and moral development,
+        nurturing students to be leaders of tomorrow.
+      </p>
+      <a href="About Us.html" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ====== NEWS SECTION ====== -->
+  <section class="news">
+    <div class="container">
+      <h2>Latest News</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <h3>End of Term Exams</h3>
+          <p>Our term exams will begin on October 20th. Students are encouraged to prepare well.</p>
+        </div>
+        <div class="news-card">
+          <h3>Sports Gala</h3>
+          <p>Join us for the annual inter-house sports competition this November!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Gift High School | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPT FOR MENU ====== -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
+
+
+

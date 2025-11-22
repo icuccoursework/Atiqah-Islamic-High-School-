@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions | Gift High School</title>
+
+<style>
+    /* ===== GLOBAL ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background-color: #003366;
+        color: white;
+        padding: 15px 0;
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* ===== LOGO ===== */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .logo h1 {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #ffa500;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+        background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('images/library.jpg') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* ===== CONTENT SECTION ===== */
+    .content-section {
+        padding: 60px 0;
+    }
+
+    .content-section h3 {
+        text-align: center;
+        color: #003366;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+    }
+
+    .content-section p {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-box {
+        background: #f0f4ff;
+        border-left: 5px solid #ffa500;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .section-box h4 {
+        color: #003366;
+        margin-bottom: 10px;
+    }
+
+    .section-box ul {
+        list-style: disc inside;
+    }
+
+    /* ===== ADMISSION FORM ===== */
+    .admission-form {
+        background: #f5f7fa;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .admission-form label {
+        display: block;
+        margin-top: 15px;
+        color: #003366;
+        font-weight: 600;
+    }
+
+    .admission-form input,
+    .admission-form select,
+    .admission-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    .admission-form input:focus,
+    .admission-form select:focus,
+    .admission-form textarea:focus {
+        border-color: #003366;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0,51,102,0.3);
+    }
+
+    .admission-form button {
+        background: #003366;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .admission-form button:hover {
+        background: #ffa500;
+    }
+
+    .success-message {
+        display: none;
+        background: #e0ffe5;
+        color: #006d1b;
+        border-left: 5px solid #28a745;
+        padding: 10px 15px;
+        margin-top: 15px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 600;
+        animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 50px;
+        font-size: 0.95em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+        }
+
+        .logo {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Gift High School Logo">
+            <h1>Gift High School</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Academics.html">Academics</a></li>
+                <li><a href="Admission.html" class="active">Admissions</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Admissions at Gift High School</h2>
+        <p>Join our family of excellence and discipline. Complete the form below to apply for admission.</p>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-section">
+    <div class="container">
+        <h3>Admission Information</h3>
+
+        <!-- Requirements -->
+        <div class="section-box">
+            <h4>Requirements</h4>
+            <ul>
+                <li>Completed application form</li>
+                <li>Copy of previous academic transcripts</li>
+                <li>Birth certificate or national ID</li>
+                <li>Passport-size photograph</li>
+                <li>Medical clearance form</li>
+            </ul>
+        </div>
+
+        <!-- Admission Process -->
+        <div class="section-box">
+            <h4>Admission Process</h4>
+            <ul>
+                <li>Submit online application form</li>
+                <li>Screening and assessment test</li>
+                <li>Interview with school administration</li>
+                <li>Admission confirmation and payment of fees</li>
+            </ul>
+        </div>
+
+        <!-- Fees -->
+        <div class="section-box">
+            <h4>Fees Structure</h4>
+            <ul>
+                <li>Application Fee: UGX 50,000</li>
+                <li>Tuition Fee: UGX 2,500,000 per term</li>
+                <li>Boarding Fee (if applicable): UGX 1,000,000 per term</li>
+                <li>Other Charges: Books and uniforms extra</li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="section-box">
+            <h4>Contact Information</h4>
+            <p><strong>Address:</strong> P.O. Box 123, Kampala, Uganda</p>
+            <p><strong>Phone:</strong> +256 700 123 456</p>
+            <p><strong>Email:</strong> admissions@gifthighschool.ac.ug</p>
+            <p><strong>Office Hours:</strong> Mon - Fri, 8:00 AM - 5:00 PM</p>
+        </div>
+
+        <!-- Admission Form -->
+        <div class="admission-form">
+            <h4>Apply Now</h4>
+            <form id="admissionForm" onsubmit="submitForm(event)">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+                <label for="previousschool">Previous School</label>
+                <input type="text" id="previousschool" name="previousschool" placeholder="Previous school attended" required>
+
+                <label for="grade">Grade Applying For</label>
+                <select id="grade" name="grade" required>
+                    <option value="">Select Grade</option>
+                    <option value="P.1">Primary 1</option>
+                    <option value="P.2">Primary 2</option>
+                    <option value="P.3">Primary 3</option>
+                    <option value="S.1">Senior 1</option>
+                    <option value="S.2">Senior 2</option>
+                    <option value="S.3">Senior 3</option>
+                    <option value="S.4">Senior 4</option>
+                </select>
+
+                <label for="message">Additional Notes</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any additional information..."></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                ✅ Your application has been submitted successfully!
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Gift High School | All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    document.getElementById('admissionForm').reset();
+    const msg = document.getElementById('successMessage');
+    msg.style.display = 'block';
+    setTimeout(() => {
+        msg.style.display = 'none';
+    }, 4000);
+}
+</script>
+</body>
+</html>

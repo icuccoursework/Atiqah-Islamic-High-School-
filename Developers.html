@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developers | Gift High School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== GLOBAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 0;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header .logo img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .header .logo h1 {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: #ffa500;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ===== DEVELOPERS SECTION ===== */
+    .developers-section {
+      padding: 80px 0;
+      background-color: #f5f8ff;
+      text-align: center;
+    }
+
+    .developers-section h2 {
+      color: #003366;
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    .developers-section p {
+      color: #555;
+      font-size: 1.05em;
+      margin-bottom: 50px;
+    }
+
+    .developers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .dev-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dev-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .dev-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #003366;
+      margin-bottom: 15px;
+    }
+
+    .dev-name {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #003366;
+      margin-bottom: 5px;
+    }
+
+    .dev-role {
+      color: #ffa500;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .dev-bio {
+      font-size: 0.95em;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    /* ===== SOCIAL ICONS ===== */
+    .socials a {
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 1.4em;
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.1);
+    }
+
+    .fa-envelope {
+      color: #d93025;
+    }
+
+    .fa-whatsapp {
+      color: #25D366;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    .footer a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav ul {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #003366;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        display: none;
+      }
+
+      .nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====== HEADER ====== -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Gift High School Logo" />
+        <h1>Gift High School</h1>
+      </div>
+
+      <nav class="nav">
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Academics.html">Academics</a></li>
+          <li><a href="Admission.html">Admissions</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Branches.html">Our Campuses</a></li>
+          <li><a href="Developers.html" class="active">Developers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== DEVELOPERS SECTION ===== -->
+  <section class="developers-section">
+    <div class="container">
+      <h2>Meet the Developers</h2>
+      <p>Gift High School’s website was professionally designed and developed by passionate engineers devoted to education and digital innovation.</p>
+
+      <div class="developers-grid">
+        <!-- Developer 1 -->
+        <div class="dev-card">
+          <img src="images/COM.jpg" alt="Eng. Shariif" />
+          <h3 class="dev-name">Eng. Gamusi Shariif Salimu</h3>
+          <p class="dev-role">Lead Developer & Designer</p>
+          <p class="dev-bio">
+            A versatile software engineer and creative designer committed to developing efficient, elegant, and impactful digital solutions. Lead developer behind several community and educational platforms.
+          </p>
+          <div class="socials">
+            <a href="mailto:shariif2002a@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/256708231569" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Developer 2 -->
+        <div class="dev-card">
+          <img src="images/ROB.jpg" alt="Eng. Nannono Katana Halimah" />
+          <h3 class="dev-name">Eng. Nannono Katana Halimah</h3>
+          <p class="dev-role">Assistant Developer</p>
+          <p class="dev-bio">
+            A passionate computer engineer with a keen eye for design and functionality. Dedicated to promoting innovation and supporting digital education initiatives.
+          </p>
+          <div class="socials">
+            <a href="mailto:katanahalimah112@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/256704195532" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Gift High School | All Rights Reserved</p>
+      <p>For website inquiries: 
+        <a href="mailto:shariif2002a@gmail.com"><i class="fa-solid fa-envelope"></i> shariif2002a@gmail.com</a> | 
+        <a href="https://wa.me/256708231569"><i class="fa-brands fa-whatsapp"></i> +256 708 231 569</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT FOR MENU ====== -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => navLinks.classList.toggle("show"));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
